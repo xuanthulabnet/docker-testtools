@@ -47,6 +47,15 @@ RUN apt-get update && apt-get install -y locales && rm -rf /var/lib/apt/lists/* 
     && mv composer.phar /usr/local/bin/composer \
     && rm -rf /var/lib/apt/lists/* \
     && export PATH="$PATH:/xtlabscripts/:/opt/mssql-tools/bin"
+RUN apt update -y
+RUN apt-get install dnsutils -y
+
+
+# Add RClone (instal curl if not exist)
+RUN apt-get update && apt-get install && apt-get install busybox -y \
+	&& curl https://rclone.org/install.sh | bash \
+    && rm -rf /var/lib/apt/lists/*    
+    
 
 ENV LANG en_US.utf8
 RUN echo "Asia/Ho_Chi_Minh" > /etc/timezone
