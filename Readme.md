@@ -1,0 +1,13 @@
+### Base image for ichte/tools:
+- debian os
+- mssql-tool
+- php 7.3
+- composer
+- msql-client
+- lynx
+- pandoc
+- ffmpeg
+- ssh
+- curl
+- mssql-scripter
+- rclone
